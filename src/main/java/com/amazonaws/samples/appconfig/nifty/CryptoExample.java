@@ -10,14 +10,15 @@ import java.nio.charset.StandardCharsets;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import java.security.Provider;
 import java.security.SecureRandom;
 import java.security.Security;
 import java.util.Base64;
 
 /**
- * Example class demonstrating the use of the SunJCE provider for various cryptographic operations.
+ * Example class demonstrating various cryptographic operations using Java's built-in security providers.
  * This class shows how to:
- * - Register the SunJCE provider
+ * - List available security providers
  * - Generate symmetric keys (AES)
  * - Encrypt and decrypt data
  * - Create and verify HMAC authentication codes
@@ -25,25 +26,16 @@ import java.util.Base64;
 public class CryptoExample {
 
     /**
-     * Register the SunJCE provider explicitly.
-     * Note: This is usually not necessary as SunJCE is included in the JDK by default,
-     * but shown here for demonstration purposes.
+     * List all available security providers.
+     * This method demonstrates how to retrieve information about the installed security providers.
      */
-    public static void registerSunJCEProvider() {
-        try {
-            // Create a new instance of the SunJCE provider
-            com.sun.crypto.provider.SunJCE sunJCE = new com.sun.crypto.provider.SunJCE();
-            
-            // Register the provider at a specific position (1 means highest priority)
-            Security.insertProviderAt(sunJCE, 1);
-            
-            System.out.println("SunJCE provider registered successfully.");
-            System.out.println("Provider name: " + sunJCE.getName());
-            System.out.println("Provider info: " + sunJCE.getInfo());
-            System.out.println("Provider version: " + sunJCE.getVersion());
-        } catch (Exception e) {
-            System.err.println("Failed to register SunJCE provider: " + e.getMessage());
-            e.printStackTrace();
+    public static void listSecurityProviders() {
+        System.out.println("Listing available security providers:");
+        for (Provider provider : Security.getProviders()) {
+            System.out.println("Provider: " + provider.getName());
+            System.out.println("Version: " + provider.getVersion());
+            System.out.println("Info: " + provider.getInfo());
+            System.out.println();
         }
     }
 
@@ -196,8 +188,8 @@ public class CryptoExample {
      */
     public static void main(String[] args) {
         try {
-            // Register the SunJCE provider
-            registerSunJCEProvider();
+            // List available security providers
+            listSecurityProviders();
             
             // Generate an AES key
             System.out.println("\n=== AES Key Generation ===");

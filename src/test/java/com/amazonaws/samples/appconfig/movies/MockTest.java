@@ -1,15 +1,15 @@
 package com.amazonaws.samples.appconfig.movies;
-import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import static org.junit.Assert.assertEquals;
-import static org.mockito.Matchers.anyInt;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-import static org.junit.Assert.assertNull;
 import static org.mockito.Mockito.mock;
 
 
@@ -22,7 +22,7 @@ public class MockTest {
 
         when(mocklist.get(anyInt())).thenReturn("Movies");
 
-        assertEquals("Movies", mocklist.get(0));
+        assertEquals("Movies", mocklist.getFirst());
         assertEquals("Movies", mocklist.get(1));
         assertEquals("Movies", mocklist.get(2));
     }
@@ -35,7 +35,7 @@ public class MockTest {
         verify(listSpy).add("Paid");
         verify(listSpy).add("Movies");
         assertEquals(2, listSpy.size());
-        assertEquals("Paid", listSpy.get(0));
+        assertEquals("Paid", listSpy.getFirst());
     }
 
     @Test
@@ -51,8 +51,8 @@ public class MockTest {
 
         List<String> list = mock(List.class);
 
-        Mockito.when(list.get(0)).thenReturn("PaidMovies");
-        assertEquals("PaidMovies", list.get(0));
+        Mockito.when(list.getFirst()).thenReturn("PaidMovies");
+        assertEquals("PaidMovies", list.getFirst());
         assertNull(list.get(1));
     }
 }

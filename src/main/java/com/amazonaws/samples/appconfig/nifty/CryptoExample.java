@@ -31,18 +31,20 @@ public class CryptoExample {
      */
     public static void registerSunJCEProvider() {
         try {
-            // Create a new instance of the SunJCE provider
-            com.sun.crypto.provider.SunJCE sunJCE = new com.sun.crypto.provider.SunJCE();
+            // In Java 21, we cannot directly access com.sun.crypto.provider.SunJCE
+            // Instead, we check if the SunJCE provider is already available
+            java.security.Provider sunJCEProvider = Security.getProvider("SunJCE");
             
-            // Register the provider at a specific position (1 means highest priority)
-            Security.insertProviderAt(sunJCE, 1);
-            
-            System.out.println("SunJCE provider registered successfully.");
-            System.out.println("Provider name: " + sunJCE.getName());
-            System.out.println("Provider info: " + sunJCE.getInfo());
-            System.out.println("Provider version: " + sunJCE.getVersion());
+            if (sunJCEProvider != null) {
+                System.out.println("SunJCE provider is already available.");
+                System.out.println("Provider name: " + sunJCEProvider.getName());
+                System.out.println("Provider info: " + sunJCEProvider.getInfo());
+                System.out.println("Provider version: " + sunJCEProvider.getVersionStr());
+            } else {
+                System.out.println("SunJCE provider is not available.");
+            }
         } catch (Exception e) {
-            System.err.println("Failed to register SunJCE provider: " + e.getMessage());
+            System.err.println("Failed to check SunJCE provider: " + e.getMessage());
             e.printStackTrace();
         }
     }

@@ -5,4 +5,7 @@ appconfig:
   application: MyContainerApplication
   environment: MyContainerApplicationProductionEnvironment
   config: MyContainerApplicationConfigurationProfile
-  cacheTtlInSeconds: 30
+  cacheTtlInSeconds: 30spring:
+  threads:
+    virtual:
+      enabled: true

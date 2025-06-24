@@ -25,24 +25,25 @@ import java.util.Base64;
 public class CryptoExample {
 
     /**
-     * Register the SunJCE provider explicitly.
-     * Note: This is usually not necessary as SunJCE is included in the JDK by default,
-     * but shown here for demonstration purposes.
+     * Check if the SunJCE provider is available.
+     * Note: SunJCE is included in the JDK by default and automatically registered.
+     * This method demonstrates how to check for provider availability.
      */
-    public static void registerSunJCEProvider() {
+    public static void checkSunJCEProvider() {
         try {
-            // Create a new instance of the SunJCE provider
-            com.sun.crypto.provider.SunJCE sunJCE = new com.sun.crypto.provider.SunJCE();
+            // Check if SunJCE provider is available
+            java.security.Provider sunJCE = Security.getProvider("SunJCE");
             
-            // Register the provider at a specific position (1 means highest priority)
-            Security.insertProviderAt(sunJCE, 1);
-            
-            System.out.println("SunJCE provider registered successfully.");
-            System.out.println("Provider name: " + sunJCE.getName());
-            System.out.println("Provider info: " + sunJCE.getInfo());
-            System.out.println("Provider version: " + sunJCE.getVersion());
+            if (sunJCE != null) {
+                System.out.println("SunJCE provider is available.");
+                System.out.println("Provider name: " + sunJCE.getName());
+                System.out.println("Provider info: " + sunJCE.getInfo());
+                System.out.println("Provider version: " + sunJCE.getVersionStr());
+            } else {
+                System.out.println("SunJCE provider is not available.");
+            }
         } catch (Exception e) {
-            System.err.println("Failed to register SunJCE provider: " + e.getMessage());
+            System.err.println("Failed to check SunJCE provider: " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -196,8 +197,8 @@ public class CryptoExample {
      */
     public static void main(String[] args) {
         try {
-            // Register the SunJCE provider
-            registerSunJCEProvider();
+            // Check the SunJCE provider availability
+            checkSunJCEProvider();
             
             // Generate an AES key
             System.out.println("\n=== AES Key Generation ===");

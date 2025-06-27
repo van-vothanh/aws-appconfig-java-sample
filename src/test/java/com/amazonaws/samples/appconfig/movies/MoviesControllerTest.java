@@ -1,6 +1,7 @@
 package com.amazonaws.samples.appconfig.movies;
 
 import com.amazonaws.samples.appconfig.utils.AppConfigUtility;
+import org.junit.jupiter.api.AfterEach;
 import com.amazonaws.samples.appconfig.cache.ConfigurationCache;
 import com.amazonaws.samples.appconfig.model.ConfigurationKey;
 import org.junit.jupiter.api.BeforeEach;
@@ -21,6 +22,8 @@ import static org.mockito.Mockito.when;
 
 public class MoviesControllerTest {
 
+    private AutoCloseable mocks;
+
     @Mock
     private Environment env;
 
@@ -34,7 +37,7 @@ public class MoviesControllerTest {
 
     @BeforeEach
     public void setUp() {
-        MockitoAnnotations.initMocks(this);
+        mocks = MockitoAnnotations.openMocks(this);
         moviesController = new MoviesController();
         moviesController.env = env;
     }
@@ -69,6 +72,11 @@ public class MoviesControllerTest {
         }
         //assertArrayEquals(expectedMovies, movies);
         assertEquals(5, expectedMovies.length);
+    }
+
+    @AfterEach
+    void tearDown() throws Exception {
+        mocks.close();
     }
 
 }

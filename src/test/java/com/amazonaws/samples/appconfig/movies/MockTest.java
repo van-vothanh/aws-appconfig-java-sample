@@ -29,6 +29,7 @@ public class MockTest {
 
     @Test
     public void creatingASpyOnArrayList() {
+        @SuppressWarnings("unchecked")
         List<String> listSpy = spy(ArrayList.class);
         listSpy.add("Paid");
         listSpy.add("Movies");
@@ -40,7 +41,7 @@ public class MockTest {
 
     @Test
     public void letsMockListSizeWithMultipleReturnValues() {
-        List list = mock(List.class);
+        List<String> list = mock(List.class);
         Mockito.when(list.size()).thenReturn(10).thenReturn(20);
         assertEquals(10, list.size()); // First Call
         assertEquals(20, list.size()); // Second Call

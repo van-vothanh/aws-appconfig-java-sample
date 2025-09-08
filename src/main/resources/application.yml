@@ -6,3 +6,16 @@ appconfig:
   environment: MyContainerApplicationProductionEnvironment
   config: MyContainerApplicationConfigurationProfile
   cacheTtlInSeconds: 30
+
+# JVM configuration for Java 21
+spring:
+  jvm:
+    args: >
+      -XX:+UseG1GC
+      -XX:MaxGCPauseMillis=200
+      -XX:MetaspaceSize=256m
+      -XX:MaxMetaspaceSize=512m
+      -XX:+UseStringDeduplication
+      -Xms512m
+      -Xmx1g
+      --enable-preview

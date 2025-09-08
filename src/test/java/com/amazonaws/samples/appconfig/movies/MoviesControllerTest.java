@@ -34,7 +34,8 @@ public class MoviesControllerTest {
 
     @BeforeEach
     public void setUp() {
-        MockitoAnnotations.initMocks(this);
+        // Replaced deprecated initMocks() with openMocks()
+        MockitoAnnotations.openMocks(this);
         moviesController = new MoviesController();
         moviesController.env = env;
     }

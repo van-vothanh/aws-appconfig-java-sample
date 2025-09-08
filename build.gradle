@@ -6,7 +6,7 @@ buildscript {
       mavenCentral()
     }
     dependencies {
-        classpath('org.springframework.boot:spring-boot-gradle-plugin:2.3.0.RELEASE')
+        classpath('org.springframework.boot:spring-boot-gradle-plugin:3.0.13')
     }
 }
 
@@ -23,16 +23,15 @@ repositories {
     mavenCentral()
 }
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = JavaVersion.VERSION_21
+targetCompatibility = JavaVersion.VERSION_21
 
 
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web") 
-    testCompile("org.springframework.boot:spring-boot-starter-test")
+    implementation("org.springframework.boot:spring-boot-starter-web") 
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
     implementation platform('software.amazon.awssdk:bom:2.14.27')
     implementation 'software.amazon.awssdk:appconfig'
-    compile("org.json:json:20200518")
+    implementation("org.json:json:20200518")
     testImplementation group: 'junit', name: 'junit', version: '4.11'
 }
-

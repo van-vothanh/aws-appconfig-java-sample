@@ -21,25 +21,33 @@ public class HTMLBuilder {
 //    }
 
     public String getMoviesHtml(Movie[] movies) {
-        String htmlBuilder = "<div id='movies-container'>"
-                + "<h1> FREE Movie List for this Month</h1>"
-                + getMovieItemsHtml(movies)
-                + "<hr>"
-                + "<hr width=\"100%\" size=\"2\" color=\"blue\" noshade>"
-                + "</div>";
-        return htmlBuilder;
+        // Using text block (JDK 15+ feature) for better HTML template readability
+        String htmlTemplate = """
+            <div id='movies-container'>
+                <h1> FREE Movie List for this Month</h1>
+                %s
+                <hr>
+                <hr width="100%%" size="2" color="blue" noshade>
+            </div>
+            """;
+        
+        return String.format(htmlTemplate, getMovieItemsHtml(movies));
     }
 
     private static String getMovieItemsHtml(Movie[] movies) {
         StringBuilder movieItemsHtml = new StringBuilder();
         for (Movie movie : movies) {
-            movieItemsHtml.append("<div class='movie-item'>"
-                    + "<p>ID: ").append(movie.getId()).append("</p>"
-                    + "<h3>").append(movie.getMovieName()).append("</h3>"
-                    + "<hr width=\"100%\" size=\"2\" color=\"blue\" noshade>"
-                    + "</div>");
+            // Using text block for each movie item
+            String movieTemplate = """
+                <div class='movie-item'>
+                    <p>ID: %d</p>
+                    <h3>%s</h3>
+                    <hr width="100%%" size="2" color="blue" noshade>
+                </div>
+                """;
+            
+            movieItemsHtml.append(String.format(movieTemplate, movie.id(), movie.movieName()));
         }
         return movieItemsHtml.toString();
     }
-
 }

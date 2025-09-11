@@ -18,6 +18,7 @@ public class MockTest {
     @Test
     public void testList() {
 
+        @SuppressWarnings("unchecked")
         List<String> mocklist = mock(List.class);
 
         when(mocklist.get(anyInt())).thenReturn("Movies");
@@ -40,7 +41,8 @@ public class MockTest {
 
     @Test
     public void letsMockListSizeWithMultipleReturnValues() {
-        List list = mock(List.class);
+        @SuppressWarnings("unchecked")
+        List<String> list = mock(List.class);
         Mockito.when(list.size()).thenReturn(10).thenReturn(20);
         assertEquals(10, list.size()); // First Call
         assertEquals(20, list.size()); // Second Call
@@ -49,6 +51,7 @@ public class MockTest {
     @Test
     public void letsMockListGet() {
 
+        @SuppressWarnings("unchecked")
         List<String> list = mock(List.class);
 
         Mockito.when(list.get(0)).thenReturn("PaidMovies");

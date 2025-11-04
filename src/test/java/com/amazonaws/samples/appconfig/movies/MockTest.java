@@ -16,6 +16,7 @@ import static org.mockito.Mockito.mock;
 public class MockTest {
 
     @Test
+    @SuppressWarnings("unchecked")
     public void testList() {
 
         List<String> mocklist = mock(List.class);
@@ -28,6 +29,7 @@ public class MockTest {
     }
 
     @Test
+    @SuppressWarnings("unchecked")
     public void creatingASpyOnArrayList() {
         List<String> listSpy = spy(ArrayList.class);
         listSpy.add("Paid");
@@ -39,14 +41,16 @@ public class MockTest {
     }
 
     @Test
+    @SuppressWarnings("unchecked")
     public void letsMockListSizeWithMultipleReturnValues() {
-        List list = mock(List.class);
+        List<String> list = mock(List.class);
         Mockito.when(list.size()).thenReturn(10).thenReturn(20);
         assertEquals(10, list.size()); // First Call
         assertEquals(20, list.size()); // Second Call
     }
 
     @Test
+    @SuppressWarnings("unchecked")
     public void letsMockListGet() {
 
         List<String> list = mock(List.class);

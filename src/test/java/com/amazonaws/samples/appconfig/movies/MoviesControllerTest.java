@@ -3,10 +3,11 @@ package com.amazonaws.samples.appconfig.movies;
 import com.amazonaws.samples.appconfig.utils.AppConfigUtility;
 import com.amazonaws.samples.appconfig.cache.ConfigurationCache;
 import com.amazonaws.samples.appconfig.model.ConfigurationKey;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.core.env.Environment;
 import software.amazon.awssdk.services.appconfig.AppConfigClient;
 import software.amazon.awssdk.services.appconfig.model.GetConfigurationResponse;
@@ -14,10 +15,13 @@ import software.amazon.awssdk.services.appconfig.model.GetConfigurationResponse;
 import java.time.Duration;
 import java.util.UUID;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.nullable;
+import static org.mockito.Mockito.lenient;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
-import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.*;
-
+@ExtendWith(MockitoExtension.class)
 public class MoviesControllerTest {
 
     @Mock
@@ -31,9 +35,8 @@ public class MoviesControllerTest {
 
     private MoviesController moviesController;
 
-    @Before
+    @BeforeEach
     public void setUp() {
-        MockitoAnnotations.initMocks(this);
         moviesController = new MoviesController();
         moviesController.env = env;
     }
@@ -41,17 +44,17 @@ public class MoviesControllerTest {
     @Test
     public void testMovieWithFeatureEnabled() {
         // Arrange
-        when(env.getProperty("appconfig.application")).thenReturn("myApp");
-        when(env.getProperty("appconfig.environment")).thenReturn("dev");
-        when(env.getProperty("appconfig.config")).thenReturn("myConfig");
-        when(env.getProperty("appconfig.cacheTtlInSeconds")).thenReturn("60");
+        lenient().when(env.getProperty("appconfig.application")).thenReturn("myApp");
+        lenient().when(env.getProperty("appconfig.environment")).thenReturn("dev");
+        lenient().when(env.getProperty("appconfig.config")).thenReturn("myConfig");
+        lenient().when(env.getProperty("appconfig.cacheTtlInSeconds")).thenReturn("60");
 
         String jsonResponse = "{\"boolEnableFeature\":true,\"intItemLimit\":5}";
 
         GetConfigurationResponse getConfigurationResponse = GetConfigurationResponse.builder().build();
 
         AppConfigUtility appConfigUtility = mock(AppConfigUtility.class);
-        when(appConfigUtility.getConfiguration(any(ConfigurationKey.class))).thenReturn(getConfigurationResponse);
+        lenient().when(appConfigUtility.getConfiguration(nullable(ConfigurationKey.class))).thenReturn(getConfigurationResponse);
 
         moviesController.cacheItemTtl = Duration.ofSeconds(60);
         moviesController.client = appConfigClient;

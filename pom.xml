@@ -113,7 +113,6 @@
                 <configuration>
                     <release>17</release>
                     <fork>true</fork>
-                    <executable>${java.home}/bin/javac</executable>
                     <compilerArgs>
                         <arg>-parameters</arg>
                     </compilerArgs>

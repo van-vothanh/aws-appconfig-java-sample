@@ -71,6 +71,23 @@
                     <release>17</release>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>3.5.0</version>
+                <configuration>
+                    <rules>
+                        <requireJavaVersion>
+                            <version>[17,)</version>
+                            <message>Java 17 or higher is required. Current Java version: ${java.version}</message>
+                        </requireJavaVersion>
+                        <requireMavenVersion>
+                            <version>[3.6.3,)</version>
+                            <message>Maven 3.6.3 or higher is required.</message>
+                        </requireMavenVersion>
+                    </rules>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>

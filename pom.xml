@@ -93,11 +93,11 @@
                             <version>[17,)</version>
                             <message>
                                 ********************************************************************************
-* ERROR: This project requires Java 17 or higher.                            *
-* Please set JAVA_HOME to JDK 17 before running Maven.                       *
-* Current Java version: ${java.version}                                      *
-* Current JAVA_HOME: ${env.JAVA_HOME}                                        *
-* Example: export JAVA_HOME=/usr/lib/jvm/java-17-openjdk                    *
+* ERROR: This project requires Java 17 or higher.
+* Please set JAVA_HOME to JDK 17 before running Maven.
+* Current Java version: ${java.version}
+* Example: export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+* Or: export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home
 ********************************************************************************
 </message>
                         </requireJavaVersion>
@@ -114,29 +114,9 @@
                 <configuration>
                     <source>17</source>
                     <target>17</target>
-                    <release>17</release>
-                    <fork>true</fork>
                     <compilerArgs>
                         <arg>-parameters</arg>
                     </compilerArgs>
-                    <jdkToolchain>
-                        <version>17</version>
-                    </jdkToolchain>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <version>3.1.0</version>
-                <configuration>
-                    <target>
-                        <echo message="Using Java version: ${java.version}"/>
-                        <echo message="Java home: ${java.home}"/>
-                        <condition property="java.version.valid">
-                            <matches pattern="^(17|[2-9][0-9])\..*" string="${java.version}"/>
-                        </condition>
-                        <fail message="Java 17 or higher is required. Current version is ${java.version}. Please set JAVA_HOME to Java 17 JDK." unless="java.version.valid"/>
-                    </target>
                 </configuration>
             </plugin>
         </plugins>

@@ -73,6 +73,19 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.14.0</version>
+                <configuration>
+                    <release>17</release>
+                    <fork>true</fork>
+                    <compilerArgs>
+                        <arg>-parameters</arg>
+                        <arg>-J-Xmx1024m</arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
                 <version>3.5.0</version>
                 <configuration>
@@ -91,19 +104,6 @@
                             <version>[3.6.0,)</version>
                         </requireMavenVersion>
                     </rules>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.14.0</version>
-                <configuration>
-                    <release>17</release>
-                    <fork>true</fork>
-                    <compilerArgs>
-                        <arg>-parameters</arg>
-                        <arg>-J-Xmx1024m</arg>
-                    </compilerArgs>
                 </configuration>
             </plugin>
             <plugin>

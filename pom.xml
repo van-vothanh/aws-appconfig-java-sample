@@ -108,7 +108,6 @@
                 <version>3.14.0</version>
                 <configuration>
                     <release>17</release>
-                    <fork>true</fork>
                     <compilerArgs>
                         <arg>-parameters</arg>
                     </compilerArgs>

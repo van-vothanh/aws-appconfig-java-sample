@@ -109,6 +109,7 @@
                 <configuration>
                     <release>17</release>
                     <fork>true</fork>
+                    <compilerVersion>17</compilerVersion>
                 </configuration>
             </plugin>
         </plugins>

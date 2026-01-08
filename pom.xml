@@ -81,6 +81,7 @@
                 <version>3.14.0</version>
                 <configuration>
                     <release>17</release>
+                    <fork>true</fork>
                 </configuration>
             </plugin>
         </plugins>

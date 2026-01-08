@@ -81,10 +81,6 @@
                 <configuration>
                     <source>17</source>
                     <target>17</target>
-                    <release>17</release>
-                    <compilerArgs>
-                        <arg>-parameters</arg>
-                    </compilerArgs>
                 </configuration>
             </plugin>
             <plugin>
@@ -95,12 +91,7 @@
                     <rules>
                         <requireJavaVersion>
                             <version>[17,)</version>
-                            <message>Java 17 or higher is required to build this project.</message>
                         </requireJavaVersion>
-                        <requireMavenVersion>
-                            <version>[3.6.0,)</version>
-                            <message>Maven 3.6.0 or higher is required to build this project.</message>
-                        </requireMavenVersion>
                     </rules>
                 </configuration>
             </plugin>

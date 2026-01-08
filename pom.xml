@@ -115,7 +115,6 @@
                     <target>17</target>
                     <release>17</release>
                     <fork>true</fork>
-                    <executable>${JAVA_17_HOME}/bin/javac</executable>
                     <compilerArgs>
                         <arg>-parameters</arg>
                     </compilerArgs>

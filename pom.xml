@@ -70,28 +70,6 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-enforcer-plugin</artifactId>
-                <version>3.5.0</version>
-                <configuration>
-                    <rules>
-                        <requireJavaVersion>
-                            <version>[17,)</version>
-                            <message>
-                                ********************************************************************************
-* ERROR: This project requires Java 17 or higher.                            *
-* Please set JAVA_HOME to JDK 17 before running Maven.                       *
-* Current JAVA_HOME: ${env.JAVA_HOME}                                        *
-********************************************************************************
-                                    </message>
-                        </requireJavaVersion>
-                        <requireMavenVersion>
-                            <version>[3.6.0,)</version>
-                        </requireMavenVersion>
-                    </rules>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-toolchains-plugin</artifactId>
                 <version>3.2.0</version>
                 <configuration>
@@ -108,6 +86,28 @@
                 <version>3.14.0</version>
                 <configuration>
                     <release>17</release>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>3.5.0</version>
+                <configuration>
+                    <rules>
+                        <requireJavaVersion>
+                            <version>17</version>
+                            <message>
+                                ********************************************************************************
+* ERROR: This project requires Java 17.                                      *
+* Please set JAVA_HOME to JDK 17 before running Maven.                       *
+* Current JAVA_HOME: ${env.JAVA_HOME}                                        *
+********************************************************************************
+                                    </message>
+                        </requireJavaVersion>
+                        <requireMavenVersion>
+                            <version>[3.6.0,)</version>
+                        </requireMavenVersion>
+                    </rules>
                 </configuration>
             </plugin>
         </plugins>

@@ -70,30 +70,6 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-enforcer-plugin</artifactId>
-                <version>3.5.0</version>
-                <configuration>
-                    <rules>
-                        <requireJavaVersion>
-                            <version>[17,)</version>
-                            <message>
-                                ********************************************************************************
-* WARNING: This project requires Java 17 or higher.                          *
-* Attempting to use alternate Java 17 compiler via JAVA_17_HOME              *
-* Current JAVA_HOME: ${env.JAVA_HOME}                                        *
-* Current JAVA_17_HOME: ${env.JAVA_17_HOME}                                  *
-********************************************************************************
-                                    </message>
-                        </requireJavaVersion>
-                        <requireMavenVersion>
-                            <version>[3.6.0,)</version>
-                        </requireMavenVersion>
-                    </rules>
-                    <fail>false</fail>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-toolchains-plugin</artifactId>
                 <version>3.2.0</version>
                 <configuration>
@@ -106,12 +82,25 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>3.5.0</version>
+                <configuration>
+                    <rules>
+                        <requireJavaVersion>
+                            <version>[17,)</version>
+                        </requireJavaVersion>
+                        <requireMavenVersion>
+                            <version>[3.6.0,)</version>
+                        </requireMavenVersion>
+                    </rules>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.14.0</version>
                 <configuration>
                     <release>17</release>
-                    <fork>true</fork>
-                    <executable>${JAVA_HOME}/bin/javac</executable>
                 </configuration>
             </plugin>
         </plugins>

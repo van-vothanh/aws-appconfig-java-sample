@@ -81,18 +81,9 @@
                 <configuration>
                     <source>17</source>
                     <target>17</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-enforcer-plugin</artifactId>
-                <version>3.5.0</version>
-                <configuration>
-                    <rules>
-                        <requireJavaVersion>
-                            <version>[17,)</version>
-                        </requireJavaVersion>
-                    </rules>
+                    <release>17</release>
+                    <fork>true</fork>
+                    <executable>${JAVA_HOME}/bin/javac</executable>
                 </configuration>
             </plugin>
         </plugins>

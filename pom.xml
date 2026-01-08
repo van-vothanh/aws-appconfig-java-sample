@@ -107,9 +107,10 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.14.0</version>
                 <configuration>
-                    <release>17</release>
+                    <source>17</source>
+                    <target>17</target>
                     <fork>true</fork>
-                    <compilerVersion>17</compilerVersion>
+                    <executable>${env.JAVA_17_HOME}/bin/javac</executable>
                 </configuration>
             </plugin>
         </plugins>

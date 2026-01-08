@@ -118,7 +118,6 @@
                         <arg>-parameters</arg>
                     </compilerArgs>
                     <fork>true</fork>
-                    <executable>${JAVA_17_HOME}/bin/javac</executable>
                 </configuration>
             </plugin>
         </plugins>

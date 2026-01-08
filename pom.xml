@@ -110,7 +110,6 @@
                     <source>17</source>
                     <target>17</target>
                     <fork>true</fork>
-                    <executable>${java.home}/bin/javac</executable>
                 </configuration>
             </plugin>
         </plugins>

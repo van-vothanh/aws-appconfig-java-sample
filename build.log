@@ -47,7 +47,7 @@
   processing is enabled explicitly (-proc:only, -proc:full).
   Use -Xlint:-options to suppress this message.
   Use -proc:none to disable annotation processing.
-[INFO] /data/code/src/test/java/com/amazonaws/samples/appconfig/movies/MathTest.java: Some input files use or override a deprecated API.
+[INFO] /data/code/src/test/java/com/amazonaws/samples/appconfig/movies/MathTest.java: /data/code/src/test/java/com/amazonaws/samples/appconfig/movies/MathTest.java uses or overrides a deprecated API.
 [INFO] /data/code/src/test/java/com/amazonaws/samples/appconfig/movies/MathTest.java: Recompile with -Xlint:deprecation for details.
 [INFO] /data/code/src/test/java/com/amazonaws/samples/appconfig/movies/MockTest.java: /data/code/src/test/java/com/amazonaws/samples/appconfig/movies/MockTest.java uses unchecked or unsafe operations.
 [INFO] /data/code/src/test/java/com/amazonaws/samples/appconfig/movies/MockTest.java: Recompile with -Xlint:unchecked for details.
@@ -58,10 +58,48 @@
 [INFO] -------------------------------------------------------
 [INFO]  T E S T S
 [INFO] -------------------------------------------------------
+[INFO] Running com.amazonaws.samples.appconfig.movies.MoviesControllerTest
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (/root/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.19/byte-buddy-agent-1.14.19.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.705 s -- in com.amazonaws.samples.appconfig.movies.MoviesControllerTest
+[INFO] Running com.amazonaws.samples.appconfig.movies.MovieTest
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+05:54:22.254 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.amazonaws.samples.appconfig.movies.MovieTest]: MovieTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+05:54:23.037 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.amazonaws.samples.appconfig.movies.MoviesApplication for test class com.amazonaws.samples.appconfig.movies.MovieTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v3.2.12)
+
+2026-01-08T05:54:25.031Z  WARN 1063 --- [           main] ory$DuplicateJsonObjectContextCustomizer : 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/root/.m2/repository/org/json/json/20240303/json-20240303.jar!/org/json/JSONObject.class
+	jar:file:/root/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2026-01-08T05:54:25.052Z  INFO 1063 --- [           main] c.a.samples.appconfig.movies.MovieTest   : Starting MovieTest using Java 21.0.8 with PID 1063 (started by root in /data/code)
+2026-01-08T05:54:25.053Z  INFO 1063 --- [           main] c.a.samples.appconfig.movies.MovieTest   : No active profile set, falling back to 1 default profile: "default"
+2026-01-08T05:54:31.642Z  INFO 1063 --- [           main] c.a.samples.appconfig.movies.MovieTest   : Started MovieTest in 7.907 seconds (process running for 19.899)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.11 s -- in com.amazonaws.samples.appconfig.movies.MovieTest
+[INFO] Running com.amazonaws.samples.appconfig.movies.MathTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in com.amazonaws.samples.appconfig.movies.MathTest
+[INFO] Running com.amazonaws.samples.appconfig.movies.MockTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.114 s -- in com.amazonaws.samples.appconfig.movies.MockTest
 [INFO] 
 [INFO] Results:
 [INFO] 
-[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0
 [INFO] 
 [INFO] 
 [INFO] --- jar:3.3.0:jar (default-jar) @ movie-service ---
@@ -77,6 +115,6 @@
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  40.528 s
-[INFO] Finished at: 2026-01-08T05:48:30Z
+[INFO] Total time:  48.812 s
+[INFO] Finished at: 2026-01-08T05:54:37Z
 [INFO] ------------------------------------------------------------------------

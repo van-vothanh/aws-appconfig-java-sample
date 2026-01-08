@@ -95,6 +95,7 @@
                 <version>3.5.2</version>
                 <configuration>
                     <forkCount>1</forkCount>
+                    <jvm>${java.home}/bin/java</jvm>
                 </configuration>
             </plugin>
         </plugins>

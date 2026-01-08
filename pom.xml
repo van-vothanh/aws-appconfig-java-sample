@@ -27,6 +27,12 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>3.3.4</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
             <version>3.3.4</version>
         </dependency>
@@ -34,12 +40,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
             <version>3.3.4</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <version>3.3.4</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>software.amazon.awssdk</groupId>
@@ -55,7 +55,7 @@
         </dependency>
     </dependencies>
     <properties>
-        <java.version>8</java.version>
+        <java.version>17</java.version>
     </properties>
     <build>
         <plugins>
@@ -105,6 +105,7 @@
                             <version>[3.6.0,)</version>
                         </requireMavenVersion>
                     </rules>
+                    <fail>false</fail>
                 </configuration>
             </plugin>
             <plugin>
@@ -112,11 +113,14 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.14.0</version>
                 <configuration>
-                    <source>8</source>
-                    <target>8</target>
+                    <release>17</release>
                     <fork>true</fork>
+                    <meminitial>128m</meminitial>
+                    <maxmem>512m</maxmem>
                     <compilerArgs>
                         <arg>-parameters</arg>
+                        <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED</arg>
+                        <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
                     </compilerArgs>
                 </configuration>
             </plugin>

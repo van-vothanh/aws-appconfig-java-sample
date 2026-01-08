@@ -107,15 +107,6 @@
                         <requireMavenVersion>
                             <version>[3.6.0,)</version>
                         </requireMavenVersion>
-                        <requireEnvironmentVariable>
-                            <variableName>JAVA_HOME</variableName>
-                            <message>
-                                ********************************************************************************
-* ERROR: JAVA_HOME environment variable is not set.                          *
-* Please set JAVA_HOME to point to JDK 17 installation.                      *
-********************************************************************************
-                                    </message>
-                        </requireEnvironmentVariable>
                     </rules>
                 </configuration>
             </plugin>

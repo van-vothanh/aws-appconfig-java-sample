@@ -73,18 +73,6 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-toolchains-plugin</artifactId>
-                <version>3.2.0</version>
-                <configuration>
-                    <toolchains>
-                        <jdk>
-                            <version>17</version>
-                        </jdk>
-                    </toolchains>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
                 <version>3.5.0</version>
                 <configuration>
@@ -115,6 +103,19 @@
                     <compilerArgs>
                         <arg>-parameters</arg>
                     </compilerArgs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-toolchains-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <toolchains>
+                        <jdk>
+                            <version>17</version>
+                            <implementation>JDK</implementation>
+                        </jdk>
+                    </toolchains>
                 </configuration>
             </plugin>
         </plugins>

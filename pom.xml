@@ -73,14 +73,14 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-toolchains-plugin</artifactId>
-                <version>3.2.0</version>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.14.0</version>
                 <configuration>
-                    <toolchains>
-                        <jdk>
-                            <version>17</version>
-                        </jdk>
-                    </toolchains>
+                    <source>17</source>
+                    <target>17</target>
+                    <compilerArgs>
+                        <arg>-parameters</arg>
+                    </compilerArgs>
                 </configuration>
             </plugin>
             <plugin>
@@ -90,7 +90,7 @@
                 <configuration>
                     <rules>
                         <requireJavaVersion>
-                            <version>17</version>
+                            <version>[17,)</version>
                             <message>
                                 ********************************************************************************
 * ERROR: This project requires Java 17 or higher.                            *
@@ -103,19 +103,18 @@
                             <version>[3.6.0,)</version>
                         </requireMavenVersion>
                     </rules>
-                    <failFast>true</failFast>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.14.0</version>
+                <artifactId>maven-toolchains-plugin</artifactId>
+                <version>3.2.0</version>
                 <configuration>
-                    <release>17</release>
-                    <fork>true</fork>
-                    <compilerArgs>
-                        <arg>-parameters</arg>
-                    </compilerArgs>
+                    <toolchains>
+                        <jdk>
+                            <version>17</version>
+                        </jdk>
+                    </toolchains>
                 </configuration>
             </plugin>
         </plugins>

@@ -82,16 +82,6 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.14.0</version>
-                <configuration>
-                    <fork>true</fork>
-                    <source>${maven.compiler.source}</source>
-                    <target>${maven.compiler.target}</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
                 <version>3.5.0</version>
                 <configuration>
@@ -102,15 +92,22 @@
                                 ********************************************************************************
 * ERROR: This project requires Java 17 or higher.                            *
 * Please set JAVA_HOME to JDK 17 and run Maven with Java 17.                 *
-* Current Java runtime: ${java.runtime.version}                              *
-* Make sure your JAVA_HOME environment variable points to JDK 17+            *
+* Current Java version: ${java.version}                                      *
 ********************************************************************************
-</message>
+                                    </message>
                         </requireJavaVersion>
                         <requireMavenVersion>
                             <version>[3.6.0,)</version>
                         </requireMavenVersion>
                     </rules>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.14.0</version>
+                <configuration>
+                    <release>17</release>
                 </configuration>
             </plugin>
         </plugins>

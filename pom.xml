@@ -70,6 +70,14 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.14.0</version>
+                <configuration>
+                    <!-- Configuration removed to allow toolchain to control -->
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-toolchains-plugin</artifactId>
                 <version>3.2.0</version>
                 <configuration>
@@ -78,14 +86,6 @@
                             <version>17</version>
                         </jdk>
                     </toolchains>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.14.0</version>
-                <configuration>
-                    <!-- Configuration removed to allow toolchain to control -->
                 </configuration>
             </plugin>
             <plugin>

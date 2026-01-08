@@ -95,7 +95,6 @@
                 <version>3.5.2</version>
                 <configuration>
                     <forkCount>1</forkCount>
-                    <argLine>--release 17</argLine>
                 </configuration>
             </plugin>
         </plugins>

@@ -86,7 +86,7 @@
                 <configuration>
                     <release>17</release>
                     <fork>true</fork>
-                    <executable>${JAVA_HOME}/bin/javac</executable>
+                    <executable>${jdk17.home}/bin/javac</executable>
                 </configuration>
             </plugin>
         </plugins>

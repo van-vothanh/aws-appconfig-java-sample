@@ -70,6 +70,18 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-toolchains-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <toolchains>
+                        <jdk>
+                            <version>17</version>
+                        </jdk>
+                    </toolchains>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
                 <version>3.5.0</version>
                 <configuration>
@@ -96,21 +108,6 @@
                 <version>3.14.0</version>
                 <configuration>
                     <release>17</release>
-                    <fork>true</fork>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-toolchains-plugin</artifactId>
-                <version>3.2.0</version>
-                <configuration>
-                    <toolchains>
-                        <jdk>
-                            <version>17</version>
-                            <vendor>openjdk</vendor>
-                            <!-- Accept OpenJDK implementations -->
-                        </jdk>
-                    </toolchains>
                 </configuration>
             </plugin>
         </plugins>

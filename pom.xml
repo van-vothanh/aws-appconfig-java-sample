@@ -103,8 +103,6 @@
                 <configuration>
                     <source>17</source>
                     <target>17</target>
-                    <fork>true</fork>
-                    <executable>${JAVA_HOME}/bin/javac</executable>
                 </configuration>
             </plugin>
         </plugins>

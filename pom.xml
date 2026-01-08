@@ -82,28 +82,26 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.14.0</version>
+                <configuration>
+                    <release>17</release>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
                 <version>3.5.0</version>
                 <configuration>
                     <rules>
                         <requireJavaVersion>
                             <version>[17,)</version>
-                            <message>Project requires Java 17 or higher. Current Java version: ${java.version}</message>
+                            <message>Project requires Java 17 or higher.</message>
                         </requireJavaVersion>
                         <requireMavenVersion>
                             <version>[3.6.0,)</version>
                         </requireMavenVersion>
                     </rules>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.14.0</version>
-                <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                    <release>${java.version}</release>
                 </configuration>
             </plugin>
         </plugins>

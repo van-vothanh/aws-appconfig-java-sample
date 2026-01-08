@@ -27,6 +27,12 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>3.3.4</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
             <version>3.3.4</version>
         </dependency>
@@ -47,15 +53,9 @@
             <type>pom</type>
             <scope>import</scope>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <version>3.3.4</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
     <properties>
-        <java.version>17</java.version>
+        <java.version>1.8</java.version>
     </properties>
     <build>
         <plugins>
@@ -85,7 +85,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.14.0</version>
                 <configuration>
-                    <release>17</release>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -95,11 +96,11 @@
                 <configuration>
                     <rules>
                         <requireJavaVersion>
-                            <version>[17,)</version>
+                            <version>[1.8,)</version>
                             <message>
                                 ********************************************************************************
-* ERROR: This project requires Java 17 or higher.                            *
-* Please set JAVA_HOME to JDK 17 before running Maven.                       *
+* ERROR: This project requires Java 8 or higher.                             *
+* Please set JAVA_HOME to JDK 8 or higher before running Maven.              *
 * Current JAVA_HOME: ${env.JAVA_HOME}                                        *
 ********************************************************************************
                                     </message>

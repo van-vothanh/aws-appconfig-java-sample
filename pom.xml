@@ -104,7 +104,6 @@
                 <configuration>
                     <release>17</release>
                     <fork>true</fork>
-                    <executable>${java17.home}/bin/javac</executable>
                     <compilerArgs>
                         <arg>-parameters</arg>
                     </compilerArgs>
@@ -114,9 +113,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.5.2</version>
-                <configuration>
-                    <jvm>${java17.home}/bin/java</jvm>
-                </configuration>
             </plugin>
         </plugins>
     </build>

@@ -94,8 +94,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.5.2</version>
                 <configuration>
-                    <forkCount>1</forkCount>
-                    <jvm>${java.home}/bin/java</jvm>
+                    <forkCount>0</forkCount>
                 </configuration>
             </plugin>
         </plugins>

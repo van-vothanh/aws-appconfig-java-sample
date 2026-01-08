@@ -32,23 +32,11 @@
 [WARNING] /data/code/src/main/java/com/amazonaws/samples/appconfig/utils/Math.java:[12,16] Short(java.lang.String) in java.lang.Short has been deprecated and marked for removal
 [WARNING] /data/code/src/main/java/com/amazonaws/samples/appconfig/utils/Math.java:[14,17] Short(short) in java.lang.Short has been deprecated and marked for removal
 [WARNING] /data/code/src/main/java/com/amazonaws/samples/appconfig/utils/Math.java:[15,17] Integer(int) in java.lang.Integer has been deprecated and marked for removal
-[WARNING] /data/code/src/main/java/com/amazonaws/samples/appconfig/utils/Security.java:[12,12] javax.security.cert.Certificate in javax.security.cert has been deprecated and marked for removal
-[WARNING] /data/code/src/main/java/com/amazonaws/samples/appconfig/utils/Security.java:[12,61] javax.security.cert.CertificateExpiredException in javax.security.cert has been deprecated and marked for removal
-[WARNING] /data/code/src/main/java/com/amazonaws/samples/appconfig/utils/Security.java:[12,90] javax.security.cert.CertificateNotYetValidException in javax.security.cert has been deprecated and marked for removal
-[WARNING] /data/code/src/main/java/com/amazonaws/samples/appconfig/utils/Security.java:[12,12] javax.security.cert.Certificate in javax.security.cert has been deprecated and marked for removal
-[WARNING] /data/code/src/main/java/com/amazonaws/samples/appconfig/utils/Security.java:[12,61] javax.security.cert.CertificateExpiredException in javax.security.cert has been deprecated and marked for removal
-[WARNING] /data/code/src/main/java/com/amazonaws/samples/appconfig/utils/Security.java:[12,90] javax.security.cert.CertificateNotYetValidException in javax.security.cert has been deprecated and marked for removal
-[WARNING] /data/code/src/main/java/com/amazonaws/samples/appconfig/utils/Security.java:[12,12] javax.security.cert.Certificate in javax.security.cert has been deprecated and marked for removal
-[WARNING] /data/code/src/main/java/com/amazonaws/samples/appconfig/utils/Security.java:[12,61] javax.security.cert.CertificateExpiredException in javax.security.cert has been deprecated and marked for removal
-[WARNING] /data/code/src/main/java/com/amazonaws/samples/appconfig/utils/Security.java:[12,90] javax.security.cert.CertificateNotYetValidException in javax.security.cert has been deprecated and marked for removal
-[WARNING] /data/code/src/main/java/com/amazonaws/samples/appconfig/utils/Security.java:[13,9] javax.security.cert.X509Certificate in javax.security.cert has been deprecated and marked for removal
-[WARNING] /data/code/src/main/java/com/amazonaws/samples/appconfig/utils/Security.java:[16,20] javax.security.cert.X509Certificate in javax.security.cert has been deprecated and marked for removal
-[WARNING] /data/code/src/main/java/com/amazonaws/samples/appconfig/utils/Security.java:[17,18] javax.security.cert.CertificateException in javax.security.cert has been deprecated and marked for removal
 [INFO] /data/code/src/main/java/com/amazonaws/samples/appconfig/utils/Encoder.java: Some input files use or override a deprecated API.
 [INFO] /data/code/src/main/java/com/amazonaws/samples/appconfig/utils/Encoder.java: Recompile with -Xlint:deprecation for details.
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  16.008 s
-[INFO] Finished at: 2026-01-08T05:38:41Z
+[INFO] Total time:  14.412 s
+[INFO] Finished at: 2026-01-08T05:40:56Z
 [INFO] ------------------------------------------------------------------------

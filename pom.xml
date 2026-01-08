@@ -70,6 +70,17 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.14.0</version>
+                <configuration>
+                    <release>17</release>
+                    <compilerArgs>
+                        <arg>-parameters</arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-toolchains-plugin</artifactId>
                 <version>3.2.0</version>
                 <configuration>
@@ -94,23 +105,12 @@
 * Please set JAVA_HOME to JDK 17 and run Maven with Java 17.                 *
 * Current Java version: ${java.version}                                      *
 ********************************************************************************
-                                    </message>
+                            </message>
                         </requireJavaVersion>
                         <requireMavenVersion>
                             <version>[3.6.0,)</version>
                         </requireMavenVersion>
                     </rules>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.14.0</version>
-                <configuration>
-                    <release>17</release>
-                    <compilerArgs>
-                        <arg>-parameters</arg>
-                    </compilerArgs>
                 </configuration>
             </plugin>
         </plugins>

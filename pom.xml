@@ -82,6 +82,14 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.14.0</version>
+                <configuration>
+                    <release>17</release>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
                 <version>3.5.0</version>
                 <configuration>
@@ -109,16 +117,6 @@
                                     </message>
                         </requireEnvironmentVariable>
                     </rules>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.14.0</version>
-                <configuration>
-                    <release>17</release>
-                    <fork>true</fork>
-                    <executable>${env.JAVA_HOME}/bin/javac</executable>
                 </configuration>
             </plugin>
         </plugins>

@@ -70,13 +70,24 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-toolchains-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <toolchains>
+                        <jdk>
+                            <version>17</version>
+                        </jdk>
+                    </toolchains>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.14.0</version>
                 <configuration>
-                    <release>17</release>
-                    <compilerArgs>
-                        <arg>-parameters</arg>
-                    </compilerArgs>
+                    <fork>true</fork>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -91,7 +102,8 @@
                                 ********************************************************************************
 * ERROR: This project requires Java 17 or higher.                            *
 * Please set JAVA_HOME to JDK 17 and run Maven with Java 17.                 *
-* Current Java version: ${java.version}                                      *
+* Current Java runtime: ${java.runtime.version}                              *
+* Make sure your JAVA_HOME environment variable points to JDK 17+            *
 ********************************************************************************
 </message>
                         </requireJavaVersion>
@@ -99,18 +111,6 @@
                             <version>[3.6.0,)</version>
                         </requireMavenVersion>
                     </rules>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-toolchains-plugin</artifactId>
-                <version>3.2.0</version>
-                <configuration>
-                    <toolchains>
-                        <jdk>
-                            <version>17</version>
-                        </jdk>
-                    </toolchains>
                 </configuration>
             </plugin>
         </plugins>

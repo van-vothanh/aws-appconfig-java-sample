@@ -65,21 +65,17 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.5.2</version>
-                <configuration>
-                    <argLine>-Xmx1024m</argLine>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.14.0</version>
                 <configuration>
                     <release>17</release>
+                    <fork>true</fork>
                     <compilerArgs>
                         <arg>-parameters</arg>
                     </compilerArgs>
+                    <jdkToolchain>
+                        <version>17</version>
+                    </jdkToolchain>
                 </configuration>
             </plugin>
             <plugin>
@@ -114,6 +110,17 @@
                             <version>[3.6.0,)</version>
                         </requireMavenVersion>
                     </rules>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.5.2</version>
+                <configuration>
+                    <argLine>-Xmx1024m</argLine>
+                    <jdkToolchain>
+                        <version>17</version>
+                    </jdkToolchain>
                 </configuration>
             </plugin>
         </plugins>

@@ -73,6 +73,18 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-toolchains-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <toolchains>
+                        <jdk>
+                            <version>17</version>
+                        </jdk>
+                    </toolchains>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.14.0</version>
                 <configuration>
@@ -106,18 +118,7 @@
                             <version>[3.6.0,)</version>
                         </requireMavenVersion>
                     </rules>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-toolchains-plugin</artifactId>
-                <version>3.2.0</version>
-                <configuration>
-                    <toolchains>
-                        <jdk>
-                            <version>17</version>
-                        </jdk>
-                    </toolchains>
+                    <fail>true</fail>
                 </configuration>
             </plugin>
         </plugins>

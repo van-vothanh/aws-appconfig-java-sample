@@ -119,7 +119,6 @@
                         <arg>--release=17</arg>
                     </compilerArgs>
                     <fork>true</fork>
-                    <executable>${java.home}/bin/javac</executable>
                 </configuration>
             </plugin>
         </plugins>

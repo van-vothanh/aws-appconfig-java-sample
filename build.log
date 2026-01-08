@@ -32,11 +32,11 @@
 [WARNING] /data/code/src/main/java/com/amazonaws/samples/appconfig/utils/Math.java:[12,16] Short(java.lang.String) in java.lang.Short has been deprecated and marked for removal
 [WARNING] /data/code/src/main/java/com/amazonaws/samples/appconfig/utils/Math.java:[14,17] Short(short) in java.lang.Short has been deprecated and marked for removal
 [WARNING] /data/code/src/main/java/com/amazonaws/samples/appconfig/utils/Math.java:[15,17] Integer(int) in java.lang.Integer has been deprecated and marked for removal
-[INFO] /data/code/src/main/java/com/amazonaws/samples/appconfig/utils/Encoder.java: Some input files use or override a deprecated API.
-[INFO] /data/code/src/main/java/com/amazonaws/samples/appconfig/utils/Encoder.java: Recompile with -Xlint:deprecation for details.
+[INFO] /data/code/src/main/java/com/amazonaws/samples/appconfig/utils/AppConfigUtility.java: Some input files use or override a deprecated API.
+[INFO] /data/code/src/main/java/com/amazonaws/samples/appconfig/utils/AppConfigUtility.java: Recompile with -Xlint:deprecation for details.
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  16.906 s
-[INFO] Finished at: 2026-01-08T05:43:48Z
+[INFO] Total time:  21.112 s
+[INFO] Finished at: 2026-01-08T05:46:08Z
 [INFO] ------------------------------------------------------------------------
